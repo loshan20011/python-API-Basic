@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Flask Web Service
+  description: A simple Flask web service
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+paths:
+  /:
+    get:
+      summary: Retrieve the root endpoint
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Method Not Allowed
+      responses:
+        '405':
+          description: Method Not Allowed
+  /hello:
+    get:
+      summary: Retrieve the hello endpoint
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Hello:
+                    type: string
